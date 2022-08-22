@@ -5,7 +5,7 @@ jobs:
         machine: yes
         steps:
           - checkout
-          - run: docker run --rm --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+          - run: docker run --rm --add-host fortidevsec.forticloud.com:10.34.160.80 --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest
 
 workflows:
     Scans:
