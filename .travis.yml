@@ -1,0 +1,19 @@
+language: python
+
+python:
+
+    -- “3.6”
+
+service:
+
+    -- docker
+
+jobs:
+
+    include:
+
+        - stage: SAST
+
+          before_install: docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+
+          script: docker run --rm --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest
