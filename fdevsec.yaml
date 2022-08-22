@@ -1,8 +1,5 @@
 version: v1
 
 id:
-  org: 49806d86-1b02-406d-b049-aa71f88a0aaa
-  app: b8cc3ef7-63bd-48b1-a5f5-f2f83a959f64
-  
-on_prem:
-  sec_ops_server: https://beta.fortidevsec.forticloud.com"  
+  org: 9ad7841c-ed37-460e-a824-a5f530014770
+  app: 7ad8c998-1111-40aa-bcde-95e7f4565ef4
