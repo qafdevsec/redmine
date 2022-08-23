@@ -1,0 +1,12 @@
+kind: pipeline
+type: exec
+name: default
+platform:
+  os: linux
+  arch: amd64
+steps:
+#Should be run during CI in the Pipeline
+- name: SAST
+  commands:
+  - chmod -R 777 /tmp
+  - docker run --rm --add-host fortidevsec.forticloud.com:10.34.160.80 --mount type=bind,source="$PWD",target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest
