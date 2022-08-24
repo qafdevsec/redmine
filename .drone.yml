@@ -1,6 +1,12 @@
 --- 
 kind: pipeline
 name: default
+
+settings:
+host: 10.34.160.16
+username: root
+port: 22
+key: [ ssh_key ]
 platform: 
   arch: amd64
   os: linux
