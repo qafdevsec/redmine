@@ -7,7 +7,7 @@ platform:
 steps: 
   - 
     commands: 
-      - "chmod -R 777 /tmp"
+      - "pwd"
       - ~
     name: SAST
 type: exec
