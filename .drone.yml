@@ -1,19 +1,13 @@
 --- 
 kind: pipeline
 name: default
-
-settings:
-host: 10.34.160.16
-username: root
-port: 22
-key: [ ssh_key ]
 platform: 
   arch: amd64
   os: linux
 steps: 
   - 
     commands: 
-      - "pwd"
-      - ~
+      - "chmod -R 777 /tmp"
+      - "docker run --rm --add-host fortidevsec.forticloud.com:10.34.160.80 --mount type=bind,source=\"$PWD\",target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest"
     name: SAST
 type: exec
