@@ -5,8 +5,10 @@ jobs:
         machine: yes
         steps:
           - checkout
-          - run: env | grep -E "CIRCLECI|CIRCLE_BUILD_NUM|CIRCLE_BRANCH|CIRCLE_SHA1" > /tmp/env         
-          - run: docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+          — run: |
+            env | grep -E "CIRCLECI|CIRCLE_BUILD_NUM|CIRCLE_BRANCH|CIRCLE_SHA1" > /tmp/env
+            docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+            docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest
 
 workflows:
     Scans:
