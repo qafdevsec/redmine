@@ -5,7 +5,7 @@ id:
   app: f662f500-6b35-47e9-a32e-177404f56a92
 
 fail_pipeline:
-  risk_rating: 2
+  risk_rating: 7
 
 scanners:
   - sast
