@@ -9,6 +9,4 @@ fail_pipeline:
 
 scanners:
   - sast
-  
-languages:
-  - python
+
